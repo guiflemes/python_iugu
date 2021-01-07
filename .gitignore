@@ -4,3 +4,5 @@ dist/
 .*.sw*
 .idea/
 .env/
+.venv
+venv/
