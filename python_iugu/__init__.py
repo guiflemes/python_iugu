@@ -1,14 +1,14 @@
-from iugu.service import (
+from python_iugu.service import (
     InvoiceService,
     SubscriptionService,
     CustomerService
 )
 
-from iugu.request import (
+from python_iugu.request import (
     InvoiceRequest,
     CustomerRequest,
     SubscriptionRequest,
     CustomVariableRequest
 )
 
-from iugu.version import __version__
+from python_iugu.version import __version__

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import deserialize
-from iugu.utils import iso_to_datetime
+from python_iugu.utils import iso_to_datetime
 import datetime
 
 

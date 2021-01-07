@@ -7,9 +7,9 @@ import os
 import sys
 from distutils.core import setup
 
-from version import __version__
+from python_iugu.version import __version__
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'iugu'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'python_iugu'))
 
 setup(
     name='python_iugu',

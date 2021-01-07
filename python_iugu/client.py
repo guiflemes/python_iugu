@@ -1,10 +1,10 @@
 import aiohttp
 import asyncio
 
-from expcetion import RequestsError
-from iclient import IClient
-from utils import to_dict
-from version import __version__
+from python_iugu.expcetion import RequestsError
+from python_iugu.iclient import IClient
+from python_iugu.utils import to_dict
+from python_iugu.version import __version__
 from typing import Dict, Any, Generic, TypeVar
 import os
 

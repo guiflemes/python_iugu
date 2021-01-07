@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import deserialize
 import datetime
-from iugu.utils import iso_to_datetime
+from python_iugu.utils import iso_to_datetime
 from typing import Optional, List
 
 

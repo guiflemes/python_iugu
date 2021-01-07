@@ -1,9 +1,9 @@
 from typing import Dict, Any
 
-from iugu.service.base import BaseService
-from iugu.model.invoice import Invoice, Invoices
+from python_iugu.service.base import BaseService
+from python_iugu.model.invoice import Invoice, Invoices
 import deserialize
-from iugu.request.invoice import InvoiceRequest
+from python_iugu.request.invoice import InvoiceRequest
 
 
 class InvoiceService(BaseService):

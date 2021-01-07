@@ -1,9 +1,9 @@
-from iugu.request.subscription import SubscriptionRequest
+from python_iugu.request.subscription import SubscriptionRequest
 
-from iugu.model.subscription import Subscription, Subscriptions
+from python_iugu.model.subscription import Subscription, Subscriptions
 import deserialize
 from typing import Dict, Any
-from iugu.service.base import BaseService
+from python_iugu.service.base import BaseService
 
 
 class SubscriptionService(BaseService):
