@@ -1,0 +1,6 @@
+*.pyc
+build/
+dist/
+.*.sw*
+.idea/
+.env/
