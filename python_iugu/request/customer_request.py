@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Optional
-from python_iugu.request.utils import CustomVariable
+from python_iugu.request.utils_request import CustomVariable
 
 
 @dataclass
