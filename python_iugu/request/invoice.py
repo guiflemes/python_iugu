@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Optional, List
-from python_iugu.request.custom_variable import CustomVariableRequest
+from python_iugu.request.utils import CustomVariable
 
 
 @dataclass
@@ -25,7 +25,7 @@ class InvoiceRequest:
     subscription_id: Optional[str] = None
     payable_with: Optional[str] = None
     credits: Optional[int] = None
-    custom_variables: Optional[List[CustomVariableRequest]] = None
+    custom_variables: Optional[List[CustomVariable]] = None
     early_payment_discount: Optional[int] = None
     early_payment_discounts: Optional[List[EarlyPaymentDiscount]] = None
     external_reference: Optional[str] = None

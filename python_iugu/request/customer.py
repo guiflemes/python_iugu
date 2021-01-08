@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Optional
-from python_iugu.request.custom_variable import CustomVariableRequest
+from python_iugu.request.utils import CustomVariable
 
 
 @dataclass
@@ -19,4 +19,4 @@ class CustomerRequest:
     state: Optional[str] = None
     district: Optional[str] = None
     street: Optional[str] = None
-    custom_variables: Optional[List[CustomVariableRequest]] = None
+    custom_variables: Optional[List[CustomVariable]] = None

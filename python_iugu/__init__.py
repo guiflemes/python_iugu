@@ -8,7 +8,7 @@ from python_iugu.request import (
     InvoiceRequest,
     CustomerRequest,
     SubscriptionRequest,
-    CustomVariableRequest
+    CustomVariable
 )
 
 from python_iugu.version import __version__

@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional, List
 
-from python_iugu.request.custom_variable import CustomVariableRequest
+from python_iugu.request.utils import CustomVariable
 
 
 @dataclass
@@ -18,7 +18,7 @@ class SubscriptionRequest:
     credits_cycle: Optional[int] = None
     credits_min: Optional[int] = None
     subitems: Optional[List[SubItem]] = None
-    custom_variables: Optional[List[CustomVariableRequest]] = None
+    custom_variables: Optional[List[CustomVariable]] = None
     two_step: Optional[bool] = None
     suspend_on_invoice_expired: Optional[bool] = None
     only_charge_on_due_date: Optional[bool] = None
