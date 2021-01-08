@@ -1,4 +1,4 @@
-from python_iugu.request.subscription import SubscriptionRequest
+from python_iugu.request.subscription_request import SubscriptionRequest
 
 from python_iugu.model.subscription import Subscription, Subscriptions
 import deserialize

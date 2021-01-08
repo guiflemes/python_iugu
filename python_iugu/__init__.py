@@ -5,11 +5,10 @@ from python_iugu.service import (
 )
 
 from python_iugu.request import (
-    InvoiceRequest,
-    CustomerRequest,
-    SubscriptionRequest,
-    CustomVariable
+    customer_request,
+    invoice_request,
+    subscription_request,
+    utils
 )
-
 from python_iugu.version import __version__
 from python_iugu.client import config

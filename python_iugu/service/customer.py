@@ -3,7 +3,7 @@ from typing import Dict, Any
 from python_iugu.expcetion import RequiredParameter
 from python_iugu.service.base import BaseService
 from python_iugu.model.customer import Customer, Customers
-from python_iugu.request.customer import CustomerRequest
+from python_iugu.request.customer_request import CustomerRequest
 
 
 class CustomerService(BaseService):
