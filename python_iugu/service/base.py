@@ -1,6 +1,5 @@
-from python_iugu.iclient import IClient
+from python_iugu.client import default_api, IClient
 from typing import Optional, Dict, Any, Generic, TypeVar
-from python_iugu.client import default_api
 import deserialize
 
 T = TypeVar('T')

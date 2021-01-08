@@ -12,3 +12,4 @@ from python_iugu.request import (
 )
 
 from python_iugu.version import __version__
+from python_iugu.client import config

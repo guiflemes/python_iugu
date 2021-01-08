@@ -2,7 +2,7 @@ import aiohttp
 import asyncio
 
 from python_iugu.expcetion import RequestsError
-from python_iugu.iclient import IClient
+from python_iugu.client.iclient import IClient
 from python_iugu.utils import to_dict
 from python_iugu.version import __version__
 from typing import Dict, Any, Generic, TypeVar

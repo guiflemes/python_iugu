@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional, List
 
-from .custom_variable import CustomVariableRequest
+from python_iugu.request.custom_variable import CustomVariableRequest
 
 
 @dataclass

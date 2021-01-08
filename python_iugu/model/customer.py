@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import datetime
 from typing import List, Optional
 from python_iugu.utils import iso_to_datetime
-from .custom_variable import CustomVariable
+from python_iugu.model.custom_variable import CustomVariable
 import deserialize
 
 
