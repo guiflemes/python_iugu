@@ -1,3 +1,8 @@
+## Info
+
+This is not complete yet new releases with more functionality coming soon
+
+
 ## Iugu
 
 This provides Python Async and Typed REST APIs to create, process and manage payments on IUGU  to Python Version 3.7 >
