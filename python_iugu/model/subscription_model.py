@@ -11,7 +11,7 @@ from typing import Optional, List
 @deserialize.parser("created_at", iso_to_datetime)
 @deserialize.parser("updated_at", iso_to_datetime)
 @dataclass
-class Subscription:
+class SubscriptionModel:
     id: str
     suspended: bool
     plan_identifier: str
@@ -30,7 +30,7 @@ class Subscription:
     credits: int
     credits_based: bool
     expires_at: Optional[datetime.datetime] = None
-    subitems: Optional[List[SubItems]] = None
+    subitems: Optional[List[SubItemsModel]] = None
     # cycled_at: None
     # credits_cycle
     # in_trial
@@ -38,7 +38,7 @@ class Subscription:
 
 
 @dataclass
-class SubItems:
+class SubItemsModel:
     id: str
     description: str
     quantity: int
@@ -49,6 +49,6 @@ class SubItems:
 
 @deserialize.key("total_items", "totalItems")
 @dataclass
-class Subscriptions:
+class SubscriptionsModel:
     total_items: int
-    items: List[Subscription]
+    items: List[SubscriptionModel]

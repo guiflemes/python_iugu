@@ -2,6 +2,6 @@ from dataclasses import dataclass
 
 
 @dataclass
-class CustomVariable:
+class CustomVariableModel:
     name: str
     value: str

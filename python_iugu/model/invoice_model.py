@@ -2,8 +2,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 import datetime
 import deserialize
-from python_iugu.model.custom_variable import CustomVariable
-from python_iugu.model.item import Item
+from python_iugu.model.custom_variable_model import CustomVariableModel
+from python_iugu.model.item_model import ItemModel
 from python_iugu.utils import iso_to_datetime
 from typing import List, Optional
 
@@ -20,7 +20,7 @@ from typing import List, Optional
 @deserialize.parser("occurrence_date", iso_to_datetime)
 @deserialize.parser("credit_card_captured_at", iso_to_datetime)
 @dataclass
-class Invoice:
+class InvoiceModel:
     id: str
     due_date: str
     currency: str
@@ -91,15 +91,15 @@ class Invoice:
     installments: Optional[int]
     secure_id: Optional[str]
     payment_method: Optional[str]
-    financial_return_dates: Optional[List[FinancialReturn]]
-    items: Optional[List[Item]]
-    custom_variables: Optional[List[CustomVariable]]
+    financial_return_dates: Optional[List[FinancialReturnModel]]
+    items: Optional[List[ItemModel]]
+    custom_variables: Optional[List[CustomVariableModel]]
 
 
 @deserialize.parser("return_date", iso_to_datetime)
 @deserialize.parser("executed_date", iso_to_datetime)
 @dataclass
-class FinancialReturn:
+class FinancialReturnModel:
     id: int
     installment: int
     return_date: datetime.datetime
@@ -113,6 +113,6 @@ class FinancialReturn:
 
 @deserialize.key("total_items", "totalItems")
 @dataclass
-class Invoices:
+class InvoicesModel:
     total_items: int
-    items: List[Invoice]
+    items: List[InvoiceModel]

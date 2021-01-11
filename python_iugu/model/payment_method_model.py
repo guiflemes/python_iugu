@@ -2,5 +2,5 @@ from dataclasses import dataclass
 
 
 @dataclass
-class PaymentMethod:
+class PaymentMethodModel:
     pass

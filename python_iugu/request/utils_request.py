@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class CustomVariable:
+class CustomVariableRequest:
     name: str
     value: str
     _destroy: bool = False

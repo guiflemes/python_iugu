@@ -7,7 +7,7 @@ import datetime
 @deserialize.parser("created_at", iso_to_datetime)
 @deserialize.parser("updated_at", iso_to_datetime)
 @dataclass
-class Item:
+class ItemModel:
     id: str
     description: str
     price_cents: int
