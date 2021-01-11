@@ -8,6 +8,7 @@ from python_iugu.utils import iso_to_datetime
 from typing import List, Optional
 
 
+@deserialize.parser("due_date", iso_to_datetime)
 @deserialize.parser("financial_return_date", iso_to_datetime)
 @deserialize.parser("created_at_iso", iso_to_datetime)
 @deserialize.parser("updated_at", iso_to_datetime)
@@ -22,7 +23,7 @@ from typing import List, Optional
 @dataclass
 class InvoiceModel:
     id: str
-    due_date: str
+    due_date: datetime.datetime
     currency: str
     discount_cents: Optional[int]
     email: str
