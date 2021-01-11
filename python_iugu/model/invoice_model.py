@@ -20,6 +20,7 @@ from typing import List, Optional
 @deserialize.parser("chargeback_at_iso", iso_to_datetime)
 @deserialize.parser("occurrence_date", iso_to_datetime)
 @deserialize.parser("credit_card_captured_at", iso_to_datetime)
+@deserialize.parser("paid_at", iso_to_datetime)
 @dataclass
 class InvoiceModel:
     id: str
@@ -34,7 +35,7 @@ class InvoiceModel:
     total_cents: Optional[int]
     total_paid_cents: Optional[int]
     taxes_paid_cents: Optional[int]
-    paid_at: Optional[str]
+    paid_at: Optional[datetime.datetime]
     paid_cents: Optional[int]
     cc_emails: Optional[str]
     financial_return_date: Optional[datetime.datetime]
