@@ -12,3 +12,12 @@ from python_iugu.request import (
 )
 from python_iugu.version import __version__
 from python_iugu.client import config
+
+from python_iugu.model import (
+    invoice,
+    custom_variable,
+    customer,
+    item,
+    payment_method,
+    subscription
+)
