@@ -58,8 +58,10 @@ class _Client(IClient):
             return response
 
     def _loop(self, method: str, suffix: str, obj: Generic[T] = None) -> Dict[str, Any]:
-        loop = asyncio.get_event_loop()
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
         r = loop.run_until_complete(self._request(method, suffix, obj))
+        loop.close()
         return r
 
     def get(self, suffix: str, obj: Generic[T] = None) -> Dict[str, Any]:
