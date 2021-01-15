@@ -53,6 +53,7 @@ class SubItemModel:
     price_cents: int
     price: str
     total: str
+    recurrent: bool
 
 
 @deserialize.parser("due_date", iso_to_datetime)
