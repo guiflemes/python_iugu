@@ -1,5 +1,6 @@
 import datetime
 from typing import Dict, Any, Generic, TypeVar, Union
+from enum import Enum
 
 T = TypeVar("T")
 
@@ -30,6 +31,10 @@ def to_dict(obj: Generic[T]) -> Dict[str, Any]:
     for key, val in obj.__dict__.items():
         if key.startswith("_") or val is None:
             continue
+
+        if isinstance(val, Enum):
+            val = val.value
+
         element = []
         if isinstance(val, list):
             for item in val:
@@ -37,4 +42,5 @@ def to_dict(obj: Generic[T]) -> Dict[str, Any]:
         else:
             element = to_dict(val)
         result[key] = element
+
     return result
