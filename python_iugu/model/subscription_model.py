@@ -33,7 +33,6 @@ class SubscriptionModel:
     credits: int
     credits_based: bool
     payable_with: str
-    active: bool
     expires_at: Optional[datetime.datetime]
     subitems: Optional[List[SubItemModel]]
     custom_variables: Optional[List[CustomVariableModel]]
