@@ -4,5 +4,6 @@ from python_iugu.model import (
     customer_model,
     item_model,
     payment_method_model,
-    subscription_model
+    subscription_model,
+    log_model
 )

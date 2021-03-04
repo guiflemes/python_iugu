@@ -22,7 +22,8 @@ from python_iugu.model import (
     item_model,
     payment_method_model,
     subscription_model,
-    plan_model
+    plan_model,
+    log_model
 )
 
 from python_iugu.enuns import (
