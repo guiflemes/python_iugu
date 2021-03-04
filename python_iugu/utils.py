@@ -34,7 +34,7 @@ class _ConvertLogDate:
     def find_pattern(self) -> Match:
         """pattern -> 11/02, 16:20"""
 
-        fmt = "(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[,] ([01][0-9]|2[0-3]):([0-5][0-9])"
+        fmt = "(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[,] ([01][0-9]|2[0-3]):([0-5][0-9])"
         regex = re.compile(fmt)
         match = regex.match(self.date)
         return match
@@ -53,8 +53,8 @@ class _ConvertLogDate:
         date_fmt = "{}-{}-{}T{}:{}:00-00:00"
         date_iso = date_fmt.format(
             self.YEAR,
-            match.group(1),  # -> month
-            match.group(2),  # -> day
+            match.group(2),  # -> month
+            match.group(1),  # -> day
             match.group(3),  # -> hour
             match.group(4)  # -> minute
         )
