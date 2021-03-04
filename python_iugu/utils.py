@@ -9,7 +9,6 @@ T = TypeVar("T")
 def iso_to_datetime(date: Union[None, str]) -> Union[None, datetime.datetime]:
     if date is None:
         return None
-
     return _iso_to_datetime(date)
 
 
@@ -20,12 +19,12 @@ def _iso_to_datetime(iso_date: str) -> datetime.datetime:
         return datetime.datetime.strptime(iso_date, "%Y-%m-%d")
 
 
-def log_date(created_at: str) -> datetime.datetime:
-    c = _ConvertLogDate(created_at)
+def others_date_fmt(date: str) -> datetime.datetime:
+    c = _ConvertDate(date)
     return c.convert_date()
 
 
-class _ConvertLogDate:
+class _ConvertDate:
     YEAR = datetime.datetime.now().year
 
     def __init__(self, date: str) -> None:
@@ -33,7 +32,6 @@ class _ConvertLogDate:
 
     def find_pattern(self) -> Match:
         """pattern -> 11/02, 16:20"""
-
         fmt = "(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[,] ([01][0-9]|2[0-3]):([0-5][0-9])"
         regex = re.compile(fmt)
         match = regex.match(self.date)

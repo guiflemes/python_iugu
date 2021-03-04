@@ -4,7 +4,7 @@ import datetime
 import deserialize
 from python_iugu.model.custom_variable_model import CustomVariableModel
 from python_iugu.model.item_model import ItemModel
-from python_iugu.utils import iso_to_datetime
+from python_iugu.utils import iso_to_datetime, others_date_fmt
 from typing import List, Optional
 from python_iugu.model.log_model import LogModel
 
@@ -101,7 +101,7 @@ class InvoiceModel:
 
 
 @deserialize.parser("return_date", iso_to_datetime)
-@deserialize.parser("executed_date", iso_to_datetime)
+@deserialize.parser("executed_date", others_date_fmt)
 @dataclass
 class FinancialReturnModel:
     id: int
