@@ -5,6 +5,7 @@ import deserialize
 import datetime
 
 from python_iugu.model.custom_variable_model import CustomVariableModel
+from python_iugu.model.log_model import LogModel
 from python_iugu.utils import iso_to_datetime
 from typing import Optional, List
 
@@ -42,6 +43,7 @@ class SubscriptionModel:
     cycles_count: Optional[int]
     max_cycles: Optional[int]
     cycled_at: Optional[datetime.datetime]
+    logs: Optional[List[LogModel]]
 
 
 @dataclass

@@ -7,3 +7,4 @@ dist/
 .venv
 venv/
 *.egg-info
+test.py

@@ -1,6 +1,7 @@
 import datetime
-from typing import Dict, Any, Generic, TypeVar, Union
+from typing import Dict, Any, Generic, TypeVar, Union, Match
 from enum import Enum
+import re
 
 T = TypeVar("T")
 
@@ -15,8 +16,49 @@ def iso_to_datetime(date: Union[None, str]) -> Union[None, datetime.datetime]:
 def _iso_to_datetime(iso_date: str) -> datetime.datetime:
     try:
         return datetime.datetime.strptime(iso_date, "%Y-%m-%dT%H:%M:%S%z")
-    except Exception as err:
+    except Exception:  # noqa
         return datetime.datetime.strptime(iso_date, "%Y-%m-%d")
+
+
+def log_date(created_at: str) -> datetime.datetime:
+    c = _ConvertLogDate(created_at)
+    return c.convert_date()
+
+
+class _ConvertLogDate:
+    YEAR = datetime.datetime.now().year
+
+    def __init__(self, date: str) -> None:
+        self.date = date
+
+    def find_pattern(self) -> Match:
+        """pattern -> 11/02, 16:20"""
+
+        fmt = "(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[,] ([01][0-9]|2[0-3]):([0-5][0-9])"
+        regex = re.compile(fmt)
+        match = regex.match(self.date)
+        return match
+
+    def convert_date(self) -> datetime.datetime:
+        match = self.find_pattern()
+
+        if match:
+            self.date = self._make_iso_fmt_date(match)
+
+        return iso_to_datetime(self.date)
+
+    def _make_iso_fmt_date(self, match: Match) -> str:
+        """date_fmt -> 2013-11-19T11:24:29-02:00"""
+
+        date_fmt = "{}-{}-{}T{}:{}:00-00:00"
+        date_iso = date_fmt.format(
+            self.YEAR,
+            match.group(1),  # -> month
+            match.group(2),  # -> day
+            match.group(3),  # -> hour
+            match.group(4)  # -> minute
+        )
+        return date_iso
 
 
 def to_dict(obj: Generic[T]) -> Dict[str, Any]:

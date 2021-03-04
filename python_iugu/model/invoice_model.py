@@ -6,6 +6,7 @@ from python_iugu.model.custom_variable_model import CustomVariableModel
 from python_iugu.model.item_model import ItemModel
 from python_iugu.utils import iso_to_datetime
 from typing import List, Optional
+from python_iugu.model.log_model import LogModel
 
 
 @deserialize.parser("due_date", iso_to_datetime)
@@ -96,6 +97,7 @@ class InvoiceModel:
     financial_return_dates: Optional[List[FinancialReturnModel]]
     items: Optional[List[ItemModel]]
     custom_variables: Optional[List[CustomVariableModel]]
+    logs: Optional[List[LogModel]]
 
 
 @deserialize.parser("return_date", iso_to_datetime)
