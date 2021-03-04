@@ -19,7 +19,10 @@ def _iso_to_datetime(iso_date: str) -> datetime.datetime:
         return datetime.datetime.strptime(iso_date, "%Y-%m-%d")
 
 
-def others_date_fmt(date: str) -> datetime.datetime:
+def others_date_fmt(date: Union[None, str]) -> Union[None, datetime.datetime]:
+    if date is None:
+        return None
+
     c = _ConvertDate(date)
     return c.convert_date()
 
