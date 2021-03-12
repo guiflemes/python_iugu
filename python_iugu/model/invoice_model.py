@@ -50,8 +50,8 @@ class InvoiceModel:
     credit_card_last_4: Optional[str]
     credit_card_captured_at: Optional[datetime.datetime]
     credit_card_tid: Optional[str]
-    payer_name: str
-    payer_email: str
+    payer_name: Optional[str]
+    payer_email: Optional[str]
     payer_cpf_cnpj: Optional[str]
     payer_phone: Optional[str]
     payer_phone_prefix: Optional[str]
