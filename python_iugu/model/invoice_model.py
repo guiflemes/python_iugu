@@ -5,7 +5,7 @@ import deserialize
 from python_iugu.model.custom_variable_model import CustomVariableModel
 from python_iugu.model.item_model import ItemModel
 from python_iugu.utils import iso_to_datetime, others_date_fmt
-from typing import List, Optional
+from typing import List, Optional, Union
 from python_iugu.model.log_model import LogModel
 
 
@@ -40,7 +40,7 @@ class InvoiceModel:
     paid_cents: Optional[int]
     cc_emails: Optional[str]
     financial_return_date: Optional[datetime.datetime]
-    payable_with: str
+    payable_with: Union[str, List[str]]
     ignore_canceled_email: Optional[bool]
     commission_cents: Optional[int]
     early_payment_discount: bool
