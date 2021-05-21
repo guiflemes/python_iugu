@@ -7,7 +7,7 @@ from python_iugu.request.utils_request import CustomVariableRequest
 
 @dataclass
 class SubscriptionRequest:
-    customer_id: str
+    customer_id: Optional[str] = None
     plan_identifier: Optional[str] = None
     expires_at: Optional[str] = None  # fmt -> DD-MM-YYYY
     only_on_charge_success: Optional[bool] = None

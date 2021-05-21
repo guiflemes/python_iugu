@@ -8,3 +8,4 @@ dist/
 venv/
 *.egg-info
 test.py
+commands.md
