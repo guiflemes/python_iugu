@@ -1,7 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional, List
-
 from python_iugu.request.utils_request import CustomVariableRequest
 
 
@@ -26,9 +25,9 @@ class SubscriptionRequest:
 
 @dataclass
 class SubItemRequest:
-    description: str
-    price_cents: int
-    quantity: int
-    recurrent: bool
+    description: Optional[str] = None
+    price_cents: Optional[int] = None
+    quantity: Optional[int] = None
+    recurrent: Optional[bool] = None
     id: Optional[str] = None
     _destroy: Optional[bool] = None
